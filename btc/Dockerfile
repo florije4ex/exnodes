@@ -10,4 +10,4 @@ RUN apt-get install -y bitcoind
 RUN mkdir -p /root/.bitcoin
 ADD . /root/.bitcoin
 
-ENTRYPOINT ["bitcoind", "-datadir=/data", "-daemon"]
+ENTRYPOINT ["bitcoind", "-datadir=/data"]
