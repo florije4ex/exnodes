@@ -18,5 +18,8 @@ cd eth
 docker-compose up -d
 curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' http://127.0.0.1:8545
 docker-compose down
+
+备注：
+geth --datadir /data --dev --rpc --rpcaddr 0.0.0.0 --rpcapi=eth,net,web3 dumpconfig > config.toml 
 ```
 

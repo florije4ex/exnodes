@@ -3,6 +3,8 @@ services:
   bitcoind:
     image: dev/bitcoind
     container_name: dev_bitcoind
+    command: bitcoind -datadir=/data
+    hostname: ethereum
     build: .
     ports:
      - "8332:8332"
