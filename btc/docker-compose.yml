@@ -1,6 +1,8 @@
 version: '3'
 services:
   bitcoind:
+    image: dev/bitcoind
+    container_name: dev_bitcoind
     build: .
     ports:
      - "8332:8332"

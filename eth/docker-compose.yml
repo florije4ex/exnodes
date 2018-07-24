@@ -1,6 +1,8 @@
 version: '3'
 services:
   ethereum:
+    image: dev/ethereum
+    container_name: dev_ethereum
     build: .
     ports:
      - "8545:8545"
