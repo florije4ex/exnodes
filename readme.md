@@ -12,6 +12,14 @@ curl --user user:pass --data-binary '{"jsonrpc": "1.0", "id":"1", "method": "get
 docker-compose down
 ```
 
+## USDT
+```
+cd btc
+docker-compose up -d
+curl -X POST http://localhost:8332/ -H 'authorization: Basic dXNlcjpwYXNz' -H 'content-type: application/json' -d '{"jsonrpc": "1.0", "id":"1", "method": "getblockcount", "params": [] }'
+docker-compose down
+```
+
 ## ETH
 ```
 cd eth
