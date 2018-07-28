@@ -14,10 +14,10 @@ docker-compose down
 
 ## USDT
 ```
-cd btc
+cd usdt
 wget https://github.com/OmniLayer/omnicore/releases/download/v0.3.0/omnicore-0.3.0-x86_64-linux-gnu.tar.gz
 docker-compose up -d
-curl -X POST http://localhost:8332/ -H 'authorization: Basic dXNlcjpwYXNz' -H 'content-type: application/json' -d '{"jsonrpc": "1.0", "id":"1", "method": "getblockcount", "params": [] }'
+curl -X POST http://localhost:8338/ -H 'authorization: Basic dXNlcjpwYXNz' -H 'content-type: application/json' -d '{"jsonrpc": "1.0", "id":"1", "method": "getblockcount", "params": [] }'
 docker-compose down
 ```
 
