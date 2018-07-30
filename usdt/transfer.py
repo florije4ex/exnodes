@@ -116,7 +116,7 @@ def main():
     simple_send_data = simple_data(0.01)
     raw_tx = create_raw_tx(unspent)
     op_return = create_op_return(raw_tx.strip(), simple_send_data.strip())
-    raw_tx_reference = create_raw_tx_reference(op_return.strip(), 'n3kNWfBKHqAQYJXKSwUqz1M2M6vLPtRoc4')
+    raw_tx_reference = create_raw_tx_reference(op_return.strip(), 'mobuGfMnGG6hJfwQSpkigp18zsiUbwMR2z')  # n3kNWfBKHqAQYJXKSwUqz1M2M6vLPtRoc4
     raw_tx_change = create_raw_tx_change(raw_tx_reference.strip(), unspent, 'mq3nhdYvzxbSAdPsTG4YBjbKvzRD6PXYRz')
     signed_raw_tx = sign_raw_tx(raw_tx_change.strip())
     txn = send_raw_tx(json.loads(signed_raw_tx).get('hex'))

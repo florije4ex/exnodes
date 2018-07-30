@@ -1,12 +1,21 @@
 version: '3'
 services:
+  web:
+    container_name: dev_btc_nginx
+    image: nginx:latest
+    ports:
+      - "8339:8339"
+    links:
+      - bitcoind
+    volumes:
+      - ./btc.conf:/etc/nginx/conf.d/btc.conf
   bitcoind:
+    build: .
     image: dev/bitcoind
     container_name: dev_bitcoind
     command: bitcoind -datadir=/data
     hostname: bitcoind
-    build: .
-    ports:
-     - "8332:8332"
+    expose:
+     - "8332"
     volumes:
      - .:/data

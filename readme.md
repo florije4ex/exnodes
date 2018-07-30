@@ -8,7 +8,7 @@
 ```
 cd btc
 docker-compose up -d
-curl --user user:pass --data-binary '{"jsonrpc": "1.0", "id":"1", "method": "getblockcount", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/
+curl -X POST http://localhost:8339/ -H 'content-type: application/json' -d '{"jsonrpc": "1.0", "id":"1", "method": "getblockcount", "params": [] }'
 docker-compose down
 ```
 
