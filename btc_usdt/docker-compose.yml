@@ -1,0 +1,35 @@
+version: '3'
+services:
+  web:
+    container_name: dev_bu_nginx
+    image: nginx:latest
+    ports:
+      - "8348:8348"
+      - "8349:8349"
+    links:
+      - omnicored
+      - bitcoind
+    volumes:
+      - ./ng.conf:/etc/nginx/conf.d/ng.conf
+  bitcoind:
+    build: ./btc
+    image: dev/bu/bitcoind
+    container_name: dev_bu_bitcoind
+    command: bitcoind -datadir=/data -addnode=omnicored:8333
+    hostname: bitcoind
+    expose:
+     - "8332"
+     - "8333"
+    volumes:
+     - ./btc:/data
+  omnicored:
+    build: ./usdt
+    image: dev/bu/omnicored
+    container_name: dev_bu_omnicored
+    command: omnicored -datadir=/data -addnode=omnicored:8333
+    hostname: omnicored
+    expose:
+     - "8332"
+     - "8333"
+    volumes:
+     - ./usdt:/data
