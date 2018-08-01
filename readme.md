@@ -32,3 +32,11 @@ docker-compose down
 geth --datadir /data --dev --rpc --rpcaddr 0.0.0.0 --rpcapi=eth,net,web3 dumpconfig > config.toml 
 ```
 
+## BTC && USDT
+
+```
+下载0.15.0版本的bitcoin
+https://bitcoincore.org/bin/bitcoin-core-0.15.0/bitcoin-0.15.0-x86_64-linux-gnu.tar.gz
+
+```
+

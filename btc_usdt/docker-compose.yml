@@ -7,27 +7,25 @@ services:
       - "8348:8348"
       - "8349:8349"
     links:
-      - omnicored
-      - bitcoind
+      - usdt
+      - btc
     volumes:
       - ./ng.conf:/etc/nginx/conf.d/ng.conf
-  bitcoind:
+  btc:
     build: ./btc
     image: dev/bu/bitcoind
-    container_name: dev_bu_bitcoind
-    command: bitcoind -datadir=/data -addnode=omnicored:8333
-    hostname: bitcoind
+    container_name: dev_bu_btc
+    command: bitcoind -datadir=/data -addnode=usdt:8333 -printtoconsole
     expose:
      - "8332"
      - "8333"
     volumes:
      - ./btc:/data
-  omnicored:
+  usdt:
     build: ./usdt
     image: dev/bu/omnicored
-    container_name: dev_bu_omnicored
-    command: omnicored -datadir=/data -addnode=omnicored:8333
-    hostname: omnicored
+    container_name: dev_bu_usdt
+    command: omnicored -datadir=/data -addnode=btc:8333 -printtoconsole
     expose:
      - "8332"
      - "8333"
