@@ -115,9 +115,6 @@ venv.bak/
 btc/regtest/*
 
 btc_usdt/.DS_Store
-btc_usdt/btc/bitcoin-0.15.0-x86_64-linux-gnu.tar.gz
-btc_usdt/btc/regtest/*
-
 usdt/omnicore-0.3.0-x86_64-linux-gnu.tar.gz
 usdt/regtest/*
 
