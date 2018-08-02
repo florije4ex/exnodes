@@ -4,10 +4,13 @@ services:
     build: .
     image: dev/ethereum
     container_name: dev_ethereum
+    stdin_open: true
+    tty: true
 #    command: geth --config /data/config.toml
-    command: geth --dev --dev.period 10 --datadir "/data" --rpc --rpccorsdomain "*" --rpcapi "eth,net,web3,personal" --ws --wsapi "eth,net,web3,personal" console
+    command: geth --dev --dev.period 10 --datadir "/data/geth_private" --rpc --rpccorsdomain "*" --rpcapi "eth,net,web3,personal" --ws --wsapi "eth,net,web3,personal" console
     hostname: ethereum
     ports:
      - "8545:8545"
+     - "8546:8546"
     volumes:
      - .:/data
