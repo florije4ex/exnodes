@@ -141,8 +141,8 @@ def send(addr, amt):
 
 
 if __name__ == '__main__':
-    # main()
-    to_addrs = ['mobuGfMnGG6hJfwQSpkigp18zsiUbwMR2z', 'mfnhAFNK2TXBN7DNgdtmrC9iukGLtmyyha',
-                'mjAsgJUFhknFPUbTK9SbKWFnLMzHh9eK1t', 'n12HjS3HmyKQ6BrNVsm4mDiEVv4w5NaDDe']
-    for i in range(1, 11):
-        send(to_addrs[random.randint(0, 3)], round(random.uniform(0.5, 4.5), 2))
+    main()
+    # to_addrs = ['mobuGfMnGG6hJfwQSpkigp18zsiUbwMR2z', 'mfnhAFNK2TXBN7DNgdtmrC9iukGLtmyyha',
+    #             'mjAsgJUFhknFPUbTK9SbKWFnLMzHh9eK1t', 'n12HjS3HmyKQ6BrNVsm4mDiEVv4w5NaDDe']
+    # for i in range(1, 11):
+    #     send(to_addrs[random.randint(0, 3)], round(random.uniform(0.5, 4.5), 2))  # data
