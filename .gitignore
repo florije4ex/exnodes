@@ -112,8 +112,9 @@ venv.bak/
 /btc_usdt/usdt/omnicore-0.3.0-x86_64-linux-gnu.tar.gz
 /btc_usdt/btc/regtest/
 /btc_usdt/usdt/regtest/
-btc/regtest/*
+/btc/regtest/
 
 btc_usdt/.DS_Store
-usdt/omnicore-0.3.0-x86_64-linux-gnu.tar.gz
+/usdt/omnicore-0.3.0-x86_64-linux-gnu.tar.gz
 /usdt/regtest/
+/eth/data/
