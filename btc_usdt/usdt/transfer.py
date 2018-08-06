@@ -103,7 +103,11 @@ def send_raw_tx(signed_raw_tx):
 
 def main():
     keys = ['cSvBffFm5xuTbVpudAbrpkWmRX5TnKk7zwUx62g2PgNDn85fkSDq',
-            'cPxUHW3zZi7YsWrGS4rwiQRJ97GWn9Hw7BM3AuD6qmTHnHCK9CNy']
+            'cPxUHW3zZi7YsWrGS4rwiQRJ97GWn9Hw7BM3AuD6qmTHnHCK9CNy',
+            'cTCQpRwPsTvy3GpRwJhWCt39vdomKCjGEWCbvK3CwctUJuKiDDFy',
+            'cPPeDZif8qWLUD9bff91RCJWK3qBS3sPH2MpJMvhmG7TXCv5adCJ',
+            'cPkgFXKnFCGUhvWdaJnq6wAcBhRYzqiMAep9JgRxadKuGC3gtuuu',
+            'cR1duUaPvVP6p7ocAJHbgzJNXssR2tMwueoq7c5XmWETUeeMRtp2']
     for key in keys:
         import_key(key)
     gen_blk(101)
@@ -142,7 +146,8 @@ def send(addr, amt):
 
 if __name__ == '__main__':
     main()
-    # to_addrs = ['mobuGfMnGG6hJfwQSpkigp18zsiUbwMR2z', 'mfnhAFNK2TXBN7DNgdtmrC9iukGLtmyyha',
-    #             'mjAsgJUFhknFPUbTK9SbKWFnLMzHh9eK1t', 'n12HjS3HmyKQ6BrNVsm4mDiEVv4w5NaDDe']
-    # for i in range(1, 11):
-    #     send(to_addrs[random.randint(0, 3)], round(random.uniform(0.5, 4.5), 2))  # data
+    to_addrs = ['mobuGfMnGG6hJfwQSpkigp18zsiUbwMR2z', 'mfnhAFNK2TXBN7DNgdtmrC9iukGLtmyyha',
+                'mjAsgJUFhknFPUbTK9SbKWFnLMzHh9eK1t', 'n12HjS3HmyKQ6BrNVsm4mDiEVv4w5NaDDe']
+    for i in range(1, 21):
+        send(to_addrs[random.randint(0, 3)], round(random.uniform(0.5, 4.5), 2))  # data
+    gen_blk(10)
