@@ -7,10 +7,11 @@ services:
 #    stdin_open: true
     tty: true
 #    command: geth --config /data/config.toml
-    command: geth --dev --dev.period 10 --datadir "/data/data" --rpc --rpccorsdomain "*" --rpcapi "eth,net,web3,personal" --ws --wsapi "eth,net,web3,personal" console
+    command: geth --dev --dev.period 10 --datadir "/data/data" --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*" --rpcapi "eth,net,web3,personal" --ws --wsapi "eth,net,web3,personal" console
     hostname: ethereum
+    expose:
+     - "8545"
     ports:
      - "8545:8545"
-     - "8546:8546"
     volumes:
      - .:/data
