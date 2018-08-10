@@ -13,7 +13,7 @@ services:
     build: .
     image: dev/litecoind
     container_name: dev_litecoind
-    command: litecoind -datadir=/data
+    command: litecoind -datadir=/data -addresstype=legacy
     hostname: litecoind
     expose:
      - "9332"
