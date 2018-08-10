@@ -1,0 +1,16 @@
+version: '3'
+services:
+  ethereum_classic:
+    build: .
+    image: dev/etc
+    container_name: dev_etc
+#    stdin_open: true
+    tty: true
+    command: geth --dev --datadir "/data/data" --rpc --rpcaddr "0.0.0.0" --rpc-port 8555 --rpccorsdomain "*" --rpcapi "eth,net,web3,personal" --ws --wsapi "eth,net,web3,personal" console
+    hostname: etc
+    expose:
+     - "8555"
+    ports:
+     - "8555:8555"
+    volumes:
+     - .:/data
