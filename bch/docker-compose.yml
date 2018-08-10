@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    container_name: dev_bch_nginx
+    image: nginx:latest
+    ports:
+      - "8340:8340"
+    links:
+      - bch
+    volumes:
+      - ./bch.conf:/etc/nginx/conf.d/bch.conf
+  bch:
+    build: .
+    image: dev/bch
+    container_name: dev_bch
+    command: bitcoind -datadir=/data
+    hostname: bitcoind
+    expose:
+     - "8332"
+    volumes:
+     - .:/data
