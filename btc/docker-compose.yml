@@ -13,7 +13,7 @@ services:
     build: .
     image: dev/bitcoind
     container_name: dev_bitcoind
-    command: bitcoind -datadir=/data
+    command: bitcoind -datadir=/data -addresstype=legacy
     hostname: bitcoind
     expose:
      - "8332"
