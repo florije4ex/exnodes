@@ -44,9 +44,9 @@ def main():
             'cUGqzmEafUfXzkjAzkii2MBae6bUgBErShWeQqd26jZkag9L3qRm']
     for key in keys:
         import_key(key)
-    gen_blk(1)
-    send_btc('ms5bjgzea8f1UyE5GJbmrp5UYiQS8NyeHf', 10)
-    gen_blk(1)
+    # gen_blk(101)
+    # send_btc('ms5bjgzea8f1UyE5GJbmrp5UYiQS8NyeHf', 10)
+    # gen_blk(1)
 
 
 if __name__ == '__main__':

@@ -152,3 +152,6 @@ if __name__ == '__main__':
     for i in range(1, 21):
         send(to_addrs[random.randint(0, len(to_addrs) - 1)], round(random.uniform(0.5, 4.5), 2))  # data
     gen_blk(10)
+
+    send_btc('ms5bjgzea8f1UyE5GJbmrp5UYiQS8NyeHf', 10)
+    gen_blk(1)
