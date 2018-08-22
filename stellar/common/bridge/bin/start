@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Verify that horizon is answering requests and there's been at least 1 ledger
+while ! curl --silent --fail http://localhost:8000 | grep "core_latest_ledger" |grep -v "0," ; do
+  echo "Waiting for horizon to be available..."
+  sleep 1
+done
+
+set -e
+
+echo "[bridge] Setting up database..."
+/opt/stellar/bridge/bridge -c "/opt/stellar/bridge/etc/bridge.cfg" --migrate-db
+
+echo "[bridge] starting..."
+exec /opt/stellar/bridge/bridge -c "/opt/stellar/bridge/etc/bridge.cfg"

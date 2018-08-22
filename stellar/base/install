@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+apt-get update
+apt-get install -y wget \
+                   software-properties-common \
+                   gnupg
+
+wget -nv -O /usr/local/bin/confd https://github.com/kelseyhightower/confd/releases/download/v${CONFD_VERSION}/confd-${CONFD_VERSION}-linux-amd64
+chmod +x /usr/local/bin/confd
+
+# Allows SIGABRT and adopt orphaned child processes
+wget -nv -O init https://github.com/ohjames/lovely_touching/releases/download/v0.1.0/lovely_touching
+test $(md5sum init | awk '{print $1}') == "d229951a822dbb0f4306166e61141c30"
+chmod +x init
+
+apt-get clean
+rm -rf /var/lib/apt/lists/*
