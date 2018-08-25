@@ -39,7 +39,9 @@ async function getAcc() {
 
 async function getAccInfo(addr) {
     try {
-        return await api.getAccountInfo(addr);
+        console.log('Get account: ', addr);
+        let info = await api.getAccountInfo(addr);
+        console.log(info);
     } catch (e) {
         console.log(e);
     }
@@ -47,7 +49,9 @@ async function getAccInfo(addr) {
 
 async function getSetting(addr) {
     try {
-        return await api.getSettings(addr);
+        console.log('Get setting: ', addr);
+        let setting = await api.getSettings(addr);
+        console.log(setting);
     } catch (e) {
         console.log(e);
     }
@@ -140,14 +144,14 @@ async function sendTxn(prepared, secret, ledger) {
         let acc2 = await getAcc();
         console.log(acc2);
         sleep.sleep(10);
-        console.log(await getAccInfo(acc1.account.address));
-        console.log(await getAccInfo(acc2.account.address));
-        console.log(await getSetting(acc2.account.address));
+        await getAccInfo(acc1.account.address);
+        await getAccInfo(acc2.account.address);
+        await getSetting(acc2.account.address);
         await setting(acc2.account.address, acc2.account.secret);
-        console.log(await getSetting(acc2.account.address));
+        await getSetting(acc2.account.address);
         await pay(acc1.account.address, acc2.account.address, "10", acc1.account.secret);
-        console.log(await getAccInfo(acc1.account.address));
-        console.log(await getAccInfo(acc2.account.address));
+        await getAccInfo(acc1.account.address);
+        await getAccInfo(acc2.account.address);
     } catch (e) {
         console.log(e);
     } finally {
