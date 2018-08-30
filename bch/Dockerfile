@@ -8,4 +8,4 @@ RUN apt-get update
 RUN apt-get install -y bitcoind
 
 RUN mkdir -p /root/.bitcoin
-ADD . /root/.bitcoinF
+ADD . /root/.bitcoin
