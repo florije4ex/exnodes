@@ -119,7 +119,7 @@ def main():
     unspent = get_unspent('mq3nhdYvzxbSAdPsTG4YBjbKvzRD6PXYRz')
     unspent = json.loads(unspent)
     # print(simple_send())
-    simple_send_data = simple_data(0.01)
+    simple_send_data = simple_data(2.55)
     raw_tx = create_raw_tx(unspent)
     op_return = create_op_return(raw_tx.strip(), simple_send_data.strip())
     raw_tx_reference = create_raw_tx_reference(op_return.strip(), 'mobuGfMnGG6hJfwQSpkigp18zsiUbwMR2z')  # n3kNWfBKHqAQYJXKSwUqz1M2M6vLPtRoc4
@@ -133,7 +133,7 @@ def main():
 def send(addr, amt):
     unspent = get_unspent('mq3nhdYvzxbSAdPsTG4YBjbKvzRD6PXYRz')
     unspent = json.loads(unspent)
-    # print(simple_send())
+    print(unspent)
     simple_send_data = simple_data(amt)
     raw_tx = create_raw_tx(unspent)
     op_return = create_op_return(raw_tx.strip(), simple_send_data.strip())
@@ -146,12 +146,25 @@ def send(addr, amt):
 
 
 if __name__ == '__main__':
-    main()
-    to_addrs = ['mobuGfMnGG6hJfwQSpkigp18zsiUbwMR2z', 'mfnhAFNK2TXBN7DNgdtmrC9iukGLtmyyha',
-                'mjAsgJUFhknFPUbTK9SbKWFnLMzHh9eK1t', 'n12HjS3HmyKQ6BrNVsm4mDiEVv4w5NaDDe',]
-    for i in range(1, 21):
-        send(to_addrs[random.randint(0, len(to_addrs) - 1)], round(random.uniform(0.5, 4.5), 2))  # data
-    gen_blk(10)
+    # for i in range(1, 11):
+    #     send(to_addrs[random.randint(0, len(to_addrs) - 1)], round(random.uniform(0.5, 4.5), 2))  # data
+    # gen_blk(3)
 
-    send_btc('ms5bjgzea8f1UyE5GJbmrp5UYiQS8NyeHf', 10)
+    # send_btc('mobuGfMnGG6hJfwQSpkigp18zsiUbwMR2z', 2)
+    # gen_blk(3)
+    # 2.55
+
+    main()
+    to_addrs = ['mfnhAFNK2TXBN7DNgdtmrC9iukGLtmyyha',
+                'mjAsgJUFhknFPUbTK9SbKWFnLMzHh9eK1t', 'n12HjS3HmyKQ6BrNVsm4mDiEVv4w5NaDDe',] # 'mobuGfMnGG6hJfwQSpkigp18zsiUbwMR2z'
+
+    for addr in to_addrs:
+        send(addr, 2.55)  # data round(random.uniform(0.5, 4.5), 2)
     gen_blk(1)
+
+    # send_btc('ms5bjgzea8f1UyE5GJbmrp5UYiQS8NyeHf', 2)
+    # gen_blk(1)
+    # send_btc('ms5bjgzea8f1UyE5GJbmrp5UYiQS8NyeHf', 2)
+    # gen_blk(1)
+    # send_btc('ms5bjgzea8f1UyE5GJbmrp5UYiQS8NyeHf', 2)
+    # gen_blk(1)

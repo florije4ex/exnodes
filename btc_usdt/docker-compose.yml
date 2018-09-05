@@ -7,8 +7,8 @@ services:
       - "8348:8348"
       - "8349:8349"
     links:
-      - usdt
       - btc
+      - usdt
     volumes:
       - ./ng.conf:/etc/nginx/conf.d/ng.conf
   btc:
