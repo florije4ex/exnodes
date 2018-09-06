@@ -2,7 +2,7 @@
     "identity": "privatenet",
     "name": "Morden Testnet",
     "state": {
-        "startingNonce": 1048576
+        "startingNonce": 0
     },
     "network": 2,
     "consensus": "ethash",
