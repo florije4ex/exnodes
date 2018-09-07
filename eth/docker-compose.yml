@@ -2,8 +2,8 @@ version: '3'
 services:
   ethereum:
     build: .
-    image: dev/ethereum
-    container_name: dev_ethereum
+    image: dev/eth
+    container_name: dev_eth
 #    stdin_open: true
     tty: true
 #    command: geth --config /data/config.toml

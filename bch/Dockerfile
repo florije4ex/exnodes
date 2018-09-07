@@ -1,11 +1,14 @@
 FROM ubuntu:xenial
 MAINTAINER florije4ex <florije4ex@gmail.com>
 
-RUN apt-get update
-RUN apt-get install -y software-properties-common
-RUN add-apt-repository -y ppa:bitcoin-abc/ppa
-RUN apt-get update
-RUN apt-get install -y bitcoind
+RUN sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list \
+    && sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list \
+    && apt-get update \
+    && apt-get install -y software-properties-common \
+    && add-apt-repository -y ppa:bitcoin-abc/ppa \
+    && apt-get update \
+    && apt-get install -y bitcoind \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /root/.bitcoin
 ADD . /root/.bitcoin

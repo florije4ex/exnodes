@@ -1,8 +1,11 @@
 FROM ubuntu:xenial
 MAINTAINER florije4ex <florije4ex@gmail.com>
 
-RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential
+RUN sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list \
+    && sed -i s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list \
+    && apt-get update \
+    && apt-get install -y python-pip python-dev build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /root/.bitcoin
 ADD . /root/.bitcoin

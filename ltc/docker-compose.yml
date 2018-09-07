@@ -11,8 +11,8 @@ services:
       - ./ltc.conf:/etc/nginx/conf.d/ltc.conf
   litecoind:
     build: .
-    image: dev/litecoind
-    container_name: dev_litecoind
+    image: dev/ltc
+    container_name: dev_ltc
     command: litecoind -datadir=/data -addresstype=legacy
     hostname: litecoind
     expose:

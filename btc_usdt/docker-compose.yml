@@ -13,7 +13,7 @@ services:
       - ./ng.conf:/etc/nginx/conf.d/ng.conf
   btc:
     build: ./btc
-    image: dev/bu/bitcoind
+    image: dev/bu/btc
     container_name: dev_bu_btc
     command: bitcoind -datadir=/data -addnode=usdt:8333 -printtoconsole
     expose:
@@ -23,7 +23,7 @@ services:
      - ./btc:/data
   usdt:
     build: ./usdt
-    image: dev/bu/omnicored
+    image: dev/bu/usdt
     container_name: dev_bu_usdt
     command: omnicored -datadir=/data -addnode=btc:8333 -printtoconsole
     expose:

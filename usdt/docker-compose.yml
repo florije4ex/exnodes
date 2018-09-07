@@ -11,7 +11,7 @@ services:
       - ./usdt.conf:/etc/nginx/conf.d/usdt.conf
   omnicored:
     build: .
-    image: dev/omnicored
+    image: dev/usdt
     container_name: dev_usdt
     command: omnicored -datadir=/data
     hostname: omnicored

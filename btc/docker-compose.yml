@@ -11,8 +11,8 @@ services:
       - ./btc.conf:/etc/nginx/conf.d/btc.conf
   bitcoind:
     build: .
-    image: dev/bitcoind
-    container_name: dev_bitcoind
+    image: dev/btc
+    container_name: dev_btc
     command: bitcoind -datadir=/data -addresstype=legacy
     hostname: bitcoind
     expose:
