@@ -1,0 +1,16 @@
+version: '3'
+services:
+  rippled:
+    build: .
+    image: dev/xrp
+    container_name: dev_xrp
+    command: /opt/ripple/bin/rippled -a --start --conf /root/rippled.cfg
+    hostname: rippled
+    ports:
+      - "5005:5005"
+      - "6006:6006"
+    expose:
+     - "5005"
+     - "6006"
+    volumes:
+     - .:/data

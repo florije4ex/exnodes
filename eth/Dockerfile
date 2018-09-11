@@ -10,5 +10,7 @@ RUN sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list \
     && apt-get install -y ethereum \
     && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /data/
+
 #ENTRYPOINT ["geth", "--datadir", "/data", "--dev", "--rpc", "--rpcaddr", "0.0.0.0", "--rpcapi=eth,net,web3"]
 #ENTRYPOINT ["geth", "--config", "/data/config.toml"]
