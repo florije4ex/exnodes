@@ -69,6 +69,9 @@ async function sendTxn(prepared, secret) {
 }
 
 async function pay(from, secret, to, amount) {
+    let instructions = {
+            "fee": "0.000010",
+    };
     const payment = {
         "source": {
             "address": from,
@@ -88,7 +91,7 @@ async function pay(from, secret, to, amount) {
         // "allowPartialPayment": true // XRP to XRP is not allowed
     };
     try {
-        let prepared = await api.preparePayment(from, payment);
+        let prepared = await api.preparePayment(from, payment, instructions);
         console.log('prepared pay: ');
         console.log(prepared);
         return await sendTxn(prepared, secret);
@@ -142,8 +145,17 @@ async function getSettings(addr) {
         await api.connect();
         // init accounts from and to
         console.log('----------------------------------------------');
-        let fromAddr = genAddr();
-        let toAddr = genAddr();
+        // let fromAddr = genAddr();
+        // let toAddr = genAddr();
+        let fromAddr = {
+            secret: 'shWxSHaBVqgnP3Es8VcJHVmN6yVKo',
+            address: 're4FGNgQK1yqCTuzDyVMVJGMSkiYd67kM'
+        };
+        let toAddr = {
+            secret: 'sn69m6bd2jKbUbK3mu3VkEcVrGKfV',
+            address: 'rfLnd6TnxinGD8dHBfTcGEHAoBzoGWuyVw'
+        };
+
         if (!await getAccInfo(fromAddr.address)) {
             await pay(internalAddress, internalSecret, fromAddr.address, '300');
         }
