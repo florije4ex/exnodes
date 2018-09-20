@@ -1,0 +1,17 @@
+version: '3'
+services:
+  parity:
+    build: .
+    image: dev/parity
+    container_name: dev_parity
+#    stdin_open: true
+    tty: true
+#    command: geth --config /data/config.toml
+    command: parity --config=dev --base-path=/data/data --jsonrpc-interface=all --ipc-apis=web3,eth,pubsub,net,parity,parity_pubsub,parity_accounts,private,traces,rpc,shh,shh_pubsub,personal
+    hostname: parity
+    expose:
+     - "8546"
+    ports:
+     - "8546:8545"
+    volumes:
+     - .:/data

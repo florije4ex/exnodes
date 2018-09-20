@@ -66,3 +66,9 @@ docker-compose up -d
 curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' http://127.0.0.1:8545
 docker-compose down
 ```
+
+## clear
+```
+docker container prune
+docker images|grep none|awk '{print $3 }'|xargs docker rmi
+```
