@@ -26,7 +26,7 @@ function genTx() {
         value: '0xde0b6b3a7640000',
         data: '',
         // EIP 155 chainId - mainnet: 1, ropsten: 3
-        // chainId: 62
+        chainId: 1337 // config in chain.json->chainConfig->forks->Diehard
     };
 
     const tx = new EthereumTx(txParams);
