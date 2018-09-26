@@ -6,7 +6,7 @@ services:
     container_name: dev_etc
 #    stdin_open: true
     tty: true
-    command: geth --datadir "/data" --chain /data/chain.json --dev --rpc --rpcaddr "0.0.0.0" --rpc-port 8555 --rpccorsdomain "*" --rpcapi "eth,net,web3,personal" --ws --wsapi "eth,net,web3,personal" console
+    command: geth --datadir "/data" --chain /data/chain.json --dev --mine --etherbase "0x1030de87b8bc1cecb81ce086a42293f2ae42849b" --rpc --rpcaddr "0.0.0.0" --rpc-port 8555 --rpccorsdomain "*" --rpcapi "eth,net,web3,personal" --ws --wsapi "eth,net,web3,personal" console
     hostname: etc
     expose:
      - "8555"
