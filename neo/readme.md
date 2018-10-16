@@ -4,7 +4,7 @@
 ```text
 https://hub.docker.com/r/cityofzion/neo-privatenet/
 https://github.com/slipo/neo-scan-docker.git
-
+可能需要绑定127.0.0.1 neo-privnet
 ```
 
 ## operation
