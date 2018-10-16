@@ -3,6 +3,8 @@
 ## links
 ```text
 https://hub.docker.com/r/cityofzion/neo-privatenet/
+https://github.com/slipo/neo-scan-docker.git
+
 ```
 
 ## operation
