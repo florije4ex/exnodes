@@ -13,9 +13,9 @@ https://github.com/slipo/neo-scan-docker.git
 2. cd neo-scan-docker && docker-compose up -d
 备注：如需要neo-python需要
 1. docker exec -it neo-privnet /bin/bash
-删除旧数据: rm -rf Chains/privnet
-open wallet neo-privnet.wallet
-password is coz
+删除旧数据:rm -rf /root/.neopython/Chains/privnet* 
+
+open wallet neo-privnet.walletpassword is coz
 wallet rebuild
 wallet命令可以看。
 ```

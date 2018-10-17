@@ -27,8 +27,15 @@ async function send(toAddress, amount) {
     let signature = witness.serialize();
     tx.scripts.push(Neon.tx.Witness.deserialize(signature));
     let rawTx = tx.serialize(true);
+    console.log('Tx hash is: ' + tx.hash);
+    let block = await Neon.rpc.Query.getBlockCount().execute(rpcUrl);
+    console.log('Block height: ' + block.result);
     let resp = await Neon.rpc.Query.sendRawTransaction(rawTx).execute(rpcUrl);
-    console.log(resp);
+    if (resp.result) {
+        console.log('success!');
+    } else {
+        console.log('error!');
+    }
 }
 
 (async () => {
