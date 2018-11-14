@@ -1,12 +1,15 @@
 'use strict';
 
 const Neon = require('@cityofzion/neon-js');
+const privateKey = 'KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr';
+const rpcUrl = 'http://localhost:30333';
+const scanUrl = 'http://localhost:4000/api/main_net';
+const assertIds = {
+    NEO: 'c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b',
+    GAS: '602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7'
+};
 
-async function sendAssert(assertId, receiver, amount) {
-    const privateKey = 'KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr';
-    const rpcUrl = 'http://localhost:30333';
-    const scanUrl = 'http://localhost:4000/api/main_net';
-
+async function send(assertId, receiver, amount) {
     let account = new Neon.wallet.Account(privateKey);
     let intent = {
         assetId: assertId,
@@ -38,10 +41,6 @@ async function sendAssert(assertId, receiver, amount) {
 }
 
 (async () => {
-    const assertIds = {
-        NEO: 'c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b',
-        GAS: '602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7'
-    };
     const receiver = 'Ab6frjKP5EJw7WPxfU4aR5wqTMtfMLrQz6';
-    await sendAssert(assertIds.GAS, receiver, 1);
+    await send(assertIds.NEO, receiver, 1);
 })();

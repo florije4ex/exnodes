@@ -15,7 +15,8 @@ https://github.com/slipo/neo-scan-docker.git
 1. docker exec -it neo-privnet /bin/bash
 删除旧数据:rm -rf /root/.neopython/Chains/privnet* 
 
-open wallet neo-privnet.walletpassword is coz
+open wallet neo-privnet.wallet
+password is coz
 wallet rebuild
 wallet命令可以看。
 ```
